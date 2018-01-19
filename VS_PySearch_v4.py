@@ -4,7 +4,7 @@ import os
 import sys
 from bs4 import BeautifulSoup
 
-def walkTree(fileList, dpath="C:\\Users\\Michael.Spencer\\Documents\\MyApps\\PySearch"):
+def walkTree(fileList, dpath = os.path.dirname(os.path.abspath(__file__))):
     
     '''Walking the directory tree to find html docs''' 
     for f in os.listdir(dpath):
@@ -33,6 +33,9 @@ def is_html(fname):
         return False
 
 def scrape_for_docName(html_doc):
+    '''Scrapes HTML files for Keyword - for my 
+    specific case these are word documents hence the docName,
+    though may want to change to more universal var name'''
     data = open(html_doc, "r")
     soup = BeautifulSoup(data, "html.parser")
     docNames = soup.find_all("td", class_="doc_name")
