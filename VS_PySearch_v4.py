@@ -101,5 +101,6 @@ def main():
 
 #add_table_tag("Instruction_html_txt.txt")
 #print_lines("Instruction_html_txt.txt")
-main()
+if __name__ == "__main__":
+    main()
 
