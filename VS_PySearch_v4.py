@@ -6,6 +6,8 @@ from bs4 import BeautifulSoup
 
 def walkTree(fileList, dpath = os.path.dirname(os.path.abspath(__file__))):
     
+    new_list = list()
+
     '''Walking the directory tree to find html docs''' 
     for f in os.listdir(dpath):
         fpath = os.path.join(dpath, f)
